@@ -115,10 +115,8 @@ ol {
   border-bottom: 1px solid #fff;
   color: rgb(255 255 255 / 0.7);
   font-family: 'Fira Sans Condensed', sans-serif;
-  font-weight: 400;
-  font-size: 18px;
-  font-style: normal;
-  line-height: normal;
+  font-weight: inherit;
+  font-size: inherit;
   background-color: transparent;
   appearance: none;
 }
