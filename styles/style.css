@@ -249,7 +249,7 @@ button:focus-visible {
   предложеной в описании проекта */
   padding: 2px;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .content__list-item:not(:last-child) {
