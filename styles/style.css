@@ -146,10 +146,16 @@ ol {
 
 /* checkbox */
 
+.search-form__checkbox {
+  appearance: none;
+}
+
 .search-form__pseudo-checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 19px;
   height: 19px;
-  padding: 1px;
   border: 1px solid #fff;
 }
 
@@ -241,7 +247,7 @@ button:focus-visible {
   /* Отступ чинит, пропадает нижний border у кнопки
   и outline у content__video-card, аналог "хитрости"
   предложеной в описании проекта */
-  padding:2px;
+  padding: 2px;
   overflow-x: hidden;
   overflow-y: scroll;
 }
