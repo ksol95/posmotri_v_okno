@@ -147,16 +147,17 @@ ol {
 /* checkbox */
 
 .search-form__pseudo-checkbox {
-  position: relative;
   width: 19px;
   height: 19px;
+  padding: 1px;
   border: 1px solid #fff;
 }
 
 .search-form__checkbox:checked + .search-form__pseudo-checkbox:before {
   content: '';
-  position: absolute;
-  inset: 1px;
+  display: block;
+  width: 16px;
+  height: 16px;
   background-color: #fff;
 }
 
