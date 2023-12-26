@@ -108,13 +108,19 @@ ol {
 /* textfield */
 
 .search-form__textfield {
-  width: 225px;
-  height: 27px;
+  min-width: 225px;
+  min-height: 27px;
   border: none;
-  border-top: 1px solid #fff;
-  border-bottom: 1px solid #fff;
-  color: rgb(255 255 255 / 0.7);
-  font-family: 'Fira Sans Condensed', sans-serif;
+  /* радиус для safari */
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-top: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  color: inherit;
+  font-family: inherit;
   font-weight: inherit;
   font-size: inherit;
   background-color: transparent;
@@ -174,7 +180,7 @@ ol {
 /* button */
 
 .button {
-  border: 1px solid #fff;
+  border: 1px solid currentColor;
   padding: 6px 73.5px;
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
@@ -226,7 +232,7 @@ button:focus-visible {
 
 .title {
   color: #fff;
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
   font-weight: 700;
   font-size: 75px;
   font-style: normal;
@@ -240,14 +246,12 @@ button:focus-visible {
 
 .content__list {
   position: relative;
-  min-height: 298px;
-  max-height: 298px;
   /* Отступ чинит, пропадает нижний border у кнопки
   и outline у content__video-card, аналог "хитрости"
   предложеной в описании проекта */
   padding: 2px;
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow: auto;
+  max-block-size: 298px;
 }
 
 .content__list-item:not(:last-child) {
@@ -257,6 +261,8 @@ button:focus-visible {
 .content__video-card {
   display: flex;
   align-items: start;
+  padding: 2px;
+  min-block-size: 107px;
 }
 
 /* content link */
@@ -289,28 +295,42 @@ button:focus-visible {
 
 .content__video-card-description-container {
   flex-grow: 1;
+  min-inline-size: 200px;
+  max-inline-size: 200px;
 }
 
 .content__video-card-title {
   margin-bottom: 6px;
-  font-family: Oswald;
+  overflow: hidden;
+  font-family: Oswald, sans-serif;
   font-weight: 700;
   font-size: 30px;
   font-style: normal;
   line-height: 1;
   text-transform: uppercase;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .content__video-card-description {
+  display: -webkit-box;
+  overflow: hidden;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-weight: 400;
   font-size: 18px;
   font-style: normal;
   line-height: 0.9;
+  max-block-size: 65px;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
 }
 
 .content__video-card-thumbnail {
   object-fit: cover;
-  max-inline-size: 194px;
+  object-position: center;
+  /* min-inline-size: 178px; фикс для firefox */
+  min-inline-size: 178px;
+  inline-size: 100%;
+  min-block-size: 103px;
   max-block-size: 103px;
 }
