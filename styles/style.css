@@ -251,7 +251,7 @@ button:focus-visible {
   предложеной в описании проекта */
   padding: 2px;
   overflow: auto;
-  max-block-size: 298px;
+  block-size: 298px;
 }
 
 .content__list-item:not(:last-child) {
